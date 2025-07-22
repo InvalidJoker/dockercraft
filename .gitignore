@@ -1,0 +1,12 @@
+update-servers
+updated_server_versions.json
+software-updater
+target
+/remembered-trapdoor-positions.json
+/login-secrets.json
+.idea/*
+*.db
+*.db-shm
+*.db-wal
+*.json
+/dev

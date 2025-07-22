@@ -1,0 +1,52 @@
+name: Update Server Versions
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-versions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository (current repo)
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        run: |
+          curl https://sh.rustup.rs -sSf | sh -s -- -y
+          source $HOME/.cargo/env
+          rustup default stable
+
+      - name: Build Rust application
+        run: |
+          source $HOME/.cargo/env
+          cargo build --release
+
+      - name: Run Rust application
+        run: |
+          source $HOME/.cargo/env
+          ./target/release/update-servers
+
+      - name: Checkout repository (second checkout)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Copy updated file
+        run: |
+          cp updated_server_versions.json server_versions.json
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add server_versions.json
+          git commit -m "Update server_versions.json with the latest versions" || echo "No changes to commit"
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin HEAD:${{ github.ref_name }}
