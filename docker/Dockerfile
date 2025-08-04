@@ -19,6 +19,8 @@ RUN apk add --no-cache \
     freetype \
     tini \
     zip \
+    eudev \
+    udev-init-scripts \
     unzip && \
     adduser -D -h /app container
 
@@ -36,10 +38,8 @@ RUN curl -L -o server.jar "${DOWNLOAD_URL}" && \
     tail -f logs/latest.log | grep -m 1 ")! For help, type" && \
     kill -9 $(cat /tmp/server.pid) || true && \
     rm -f server.properties && \
+    rm -f bukkit.yml && \
     chown -R container:container /app && chmod -R 777 /app
-
-# remove the build config files
-RUN rm -rf /app/bukkit.yml /app/server.properties
 
 USER container
 ENV USER=container HOME=/app
@@ -47,8 +47,11 @@ WORKDIR /app
 
 STOPSIGNAL SIGINT
 
+EXPOSE 25565
+
 COPY --chown=container:container ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+RUN chown -R container:container /app && chmod -R 777 /app
 
 ENTRYPOINT ["/sbin/tini", "-g", "--"]
 CMD ["/entrypoint.sh"]

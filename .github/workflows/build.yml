@@ -27,7 +27,7 @@ jobs:
       - name: Run Rust application
         run: |
           source $HOME/.cargo/env
-          ./target/release/update-servers
+          ./target/release/image-builder
 
       - name: Checkout repository (second checkout)
         uses: actions/checkout@v4
