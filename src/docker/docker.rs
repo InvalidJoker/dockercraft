@@ -63,7 +63,9 @@ pub async fn build_paper_image(version: &str, download_url: &str) -> Result<()> 
 
     if username == "unknown" || password == "unknown" {
         warn!("GITHUB_ACTOR or GITHUB_TOKEN environment variables are not set. Skipping push to registry.");
-        return Ok(());
+        return Err(anyhow::anyhow!(
+            "GITHUB_ACTOR or GITHUB_TOKEN environment variables are not set. Skipping push to registry."
+        ));
     }
 
     let options = PushImageOptions {
