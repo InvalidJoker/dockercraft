@@ -32,7 +32,7 @@ async fn update_paper(client: &Client, server: &mut ServerVersion, project: &str
         let version_str = &version.version.id;
 
 
-        if (project == "paper" || project == "folia") && (version.version.java.version.minimum < 17 || version.version.java.version.minimum == -1) {
+        if (project == "paper" || project == "folia") && (version.version.java.version.minimum < 21 || version.version.java.version.minimum == -1) {
             continue;
         }
 

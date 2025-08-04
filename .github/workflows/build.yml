@@ -26,7 +26,6 @@ jobs:
 
       - name: Run Rust application
         run: |
-          source $HOME/.cargo/env
           ./target/release/image-builder
 
       - name: Checkout repository (second checkout)

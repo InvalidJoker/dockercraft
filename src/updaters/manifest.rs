@@ -17,7 +17,6 @@ pub struct ServerVersion {
     pub name: String,
     #[serde(rename = "type")]
     pub typ: String,
-    pub is_paperclip: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub latest_snapshot: Option<String>,
     pub download_links: Option<Vec<DownloadLink>>,

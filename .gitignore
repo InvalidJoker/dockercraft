@@ -8,5 +8,4 @@ target
 *.db
 *.db-shm
 *.db-wal
-*.json
 /dev
