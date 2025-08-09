@@ -7,22 +7,21 @@ on:
 
 jobs:
   run:
+  run:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: image-builder
-          path: ./target/release/
+      - name: Download binary from latest GitHub Release
+        run: |
+          curl -sL https://github.com/${{ github.repository }}/releases/download/latest/image-builder -o image-builder
+          chmod +x image-builder
 
       - name: Run Rust application
         run: |
-          chmod +x ./target/release/image-builder
-          ./target/release/image-builder
+          ./image-builder
 
       - name: Copy updated file
         run: |

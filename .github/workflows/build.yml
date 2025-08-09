@@ -27,8 +27,11 @@ jobs:
           source $HOME/.cargo/env
           cargo build --release
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload binary to GitHub Release
+        uses: svenstaro/upload-release-action@v2
         with:
-          name: image-builder
-          path: target/release/image-builder
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/release/image-builder
+          asset_name: image-builder
+          tag: latest
+          overwrite: true
