@@ -1,9 +1,8 @@
-mod updaters;
 mod docker;
+mod updaters;
 
 use crate::updaters::updater::update_versions;
 use updaters::manifest::{fetch_server_versions, write_server_versions};
-
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -19,7 +18,6 @@ async fn main() -> anyhow::Result<()> {
 
     write_server_versions("updated_server_versions.json", &server_versions)
         .expect("Failed to write updated server_versions.json");
-
 
     for version in server_versions.iter().filter(|s| s.name == "Paper") {
         if let Some(links) = &version.download_links {

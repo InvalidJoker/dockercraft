@@ -1,7 +1,6 @@
-
-use reqwest::Client;
 use crate::updaters::manifest::{DownloadLink, ServerVersion, ServerVersions};
 use crate::updaters::paper::{BuildResponse, VersionsResponse};
+use reqwest::Client;
 
 pub async fn update_versions(servers: &mut ServerVersions) -> anyhow::Result<()> {
     let client = Client::builder()
@@ -21,7 +20,11 @@ pub async fn update_versions(servers: &mut ServerVersions) -> anyhow::Result<()>
     Ok(())
 }
 
-async fn update_paper(client: &Client, server: &mut ServerVersion, project: &str) -> anyhow::Result<()> {
+async fn update_paper(
+    client: &Client,
+    server: &mut ServerVersion,
+    project: &str,
+) -> anyhow::Result<()> {
     let url = format!("https://fill.papermc.io/v3/projects/{}/versions", project);
     let versions_resp = client.get(&url).send().await?.error_for_status()?;
     let parsed = versions_resp.json::<VersionsResponse>().await?;
@@ -31,8 +34,31 @@ async fn update_paper(client: &Client, server: &mut ServerVersion, project: &str
     for version in parsed.versions {
         let version_str = &version.version.id;
 
+        if project == "paper" || project == "folia" {
+            let parts: Vec<&str> = version_str.split('.').collect();
 
-        if (project == "paper" || project == "folia") && (version.version.java.version.minimum < 21 || version.version.java.version.minimum == -1) {
+            if parts.len() >= 2 {
+                let major = parts[0].parse::<u32>().unwrap_or(0);
+                let minor = parts[1].parse::<u32>().unwrap_or(0);
+                let patch = if parts.len() >= 3 {
+                    parts[2].parse::<u32>().unwrap_or(0)
+                } else {
+                    0
+                };
+
+                if (major < 1)
+                    || (major == 1 && minor < 21)
+                    || (major == 1 && minor == 21 && patch < 5)
+                {
+                    continue;
+                }
+            }
+        }
+
+        if (project == "paper" || project == "folia")
+            && (version.version.java.version.minimum < 21
+                || version.version.java.version.minimum == -1)
+        {
             continue;
         }
 
