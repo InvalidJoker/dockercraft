@@ -2,17 +2,65 @@
   {
     "name": "Velocity",
     "type": "PROXY",
-    "is_paperclip": false,
     "download_links": []
   },
   {
     "name": "Paper",
     "type": "SERVER",
-    "is_paperclip": true,
     "download_links": [
       {
+        "version": "1.21.10",
+        "link": "https://fill-data.papermc.io/v1/objects/d4f897545310f31e623d9680786b25dd20a9989e139db050d1aacf81ecafd05c/paper-1.21.10-113.jar",
+        "java_minimum": 21,
+        "java_recommended_flags": [
+          "-XX:+AlwaysPreTouch",
+          "-XX:+DisableExplicitGC",
+          "-XX:+ParallelRefProcEnabled",
+          "-XX:+PerfDisableSharedMem",
+          "-XX:+UnlockExperimentalVMOptions",
+          "-XX:+UseG1GC",
+          "-XX:G1HeapRegionSize=8M",
+          "-XX:G1HeapWastePercent=5",
+          "-XX:G1MaxNewSizePercent=40",
+          "-XX:G1MixedGCCountTarget=4",
+          "-XX:G1MixedGCLiveThresholdPercent=90",
+          "-XX:G1NewSizePercent=30",
+          "-XX:G1RSetUpdatingPauseTimePercent=5",
+          "-XX:G1ReservePercent=20",
+          "-XX:InitiatingHeapOccupancyPercent=15",
+          "-XX:MaxGCPauseMillis=200",
+          "-XX:MaxTenuringThreshold=1",
+          "-XX:SurvivorRatio=32"
+        ]
+      },
+      {
+        "version": "1.21.9",
+        "link": "https://fill-data.papermc.io/v1/objects/aec002e77c7566e49494fdf05430b96078ffd1d7430e652d4f338fef951e7a10/paper-1.21.9-59.jar",
+        "java_minimum": 21,
+        "java_recommended_flags": [
+          "-XX:+AlwaysPreTouch",
+          "-XX:+DisableExplicitGC",
+          "-XX:+ParallelRefProcEnabled",
+          "-XX:+PerfDisableSharedMem",
+          "-XX:+UnlockExperimentalVMOptions",
+          "-XX:+UseG1GC",
+          "-XX:G1HeapRegionSize=8M",
+          "-XX:G1HeapWastePercent=5",
+          "-XX:G1MaxNewSizePercent=40",
+          "-XX:G1MixedGCCountTarget=4",
+          "-XX:G1MixedGCLiveThresholdPercent=90",
+          "-XX:G1NewSizePercent=30",
+          "-XX:G1RSetUpdatingPauseTimePercent=5",
+          "-XX:G1ReservePercent=20",
+          "-XX:InitiatingHeapOccupancyPercent=15",
+          "-XX:MaxGCPauseMillis=200",
+          "-XX:MaxTenuringThreshold=1",
+          "-XX:SurvivorRatio=32"
+        ]
+      },
+      {
         "version": "1.21.8",
-        "link": "https://fill-data.papermc.io/v1/objects/9457d1279efcc2094e818cacb2f17670d9479e5f6b4ea2517eb93a6a3face51f/paper-1.21.8-11.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/8de7c52c3b02403503d16fac58003f1efef7dd7a0256786843927fa92ee57f1e/paper-1.21.8-60.jar",
         "java_minimum": 21,
         "java_recommended_flags": [
           "-XX:+AlwaysPreTouch",
@@ -115,20 +163,42 @@
   {
     "name": "Leaf",
     "type": "SERVER",
-    "is_paperclip": true,
     "download_links": []
   },
   {
     "name": "Purpur",
     "type": "SERVER",
-    "is_paperclip": true,
     "download_links": []
   },
   {
     "name": "Folia",
     "type": "SERVER",
-    "is_paperclip": true,
     "download_links": [
+      {
+        "version": "1.21.8",
+        "link": "https://fill-data.papermc.io/v1/objects/233843cfd5001b6f658fcab549178d694cc37f0277d004ea295de0a94c57278f/folia-1.21.8-6.jar",
+        "java_minimum": 21,
+        "java_recommended_flags": [
+          "-XX:+AlwaysPreTouch",
+          "-XX:+DisableExplicitGC",
+          "-XX:+ParallelRefProcEnabled",
+          "-XX:+PerfDisableSharedMem",
+          "-XX:+UnlockExperimentalVMOptions",
+          "-XX:+UseG1GC",
+          "-XX:G1HeapRegionSize=8M",
+          "-XX:G1HeapWastePercent=5",
+          "-XX:G1MaxNewSizePercent=40",
+          "-XX:G1MixedGCCountTarget=4",
+          "-XX:G1MixedGCLiveThresholdPercent=90",
+          "-XX:G1NewSizePercent=30",
+          "-XX:G1RSetUpdatingPauseTimePercent=5",
+          "-XX:G1ReservePercent=20",
+          "-XX:InitiatingHeapOccupancyPercent=15",
+          "-XX:MaxGCPauseMillis=200",
+          "-XX:MaxTenuringThreshold=1",
+          "-XX:SurvivorRatio=32"
+        ]
+      },
       {
         "version": "1.21.6",
         "link": "https://fill-data.papermc.io/v1/objects/917a8abaa542c1d0ef0e969693e227a7bfe1c42e671aaa806309e00a64efc234/folia-1.21.6-6.jar",
@@ -184,13 +254,11 @@
   {
     "name": "Fabric",
     "type": "SERVER",
-    "is_paperclip": false,
     "download_links": []
   },
   {
     "name": "Vanilla",
     "type": "SERVER",
-    "is_paperclip": false,
     "latest_snapshot": "25w20a",
     "download_links": []
   }
