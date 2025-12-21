@@ -10,7 +10,7 @@
     "download_links": [
       {
         "version": "1.21.11",
-        "link": "https://fill-data.papermc.io/v1/objects/7e8fd35b554aea8d1492c83fcf429e9c8e391464e50f82ee3e408be87b4e80df/paper-1.21.11-39.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/86a7bc393f06df09e8971e89592df70c7b2bfafd2248036de573e04d738467d9/paper-1.21.11-46.jar",
         "java_minimum": 21,
         "java_recommended_flags": [
           "-XX:+AlwaysPreTouch",
@@ -35,7 +35,7 @@
       },
       {
         "version": "1.21.10",
-        "link": "https://fill-data.papermc.io/v1/objects/a61a0585e203688f606ca3a649760b8ba71efca01a4af7687db5e41408ee27aa/paper-1.21.10-117.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/74e3a26c32a09dcbb213aec27a107467739e27b12dbe82b1a3e7a4b7d059c730/paper-1.21.10-129.jar",
         "java_minimum": 21,
         "java_recommended_flags": [
           "-XX:+AlwaysPreTouch",
@@ -199,6 +199,31 @@
     "name": "Folia",
     "type": "SERVER",
     "download_links": [
+      {
+        "version": "1.21.11",
+        "link": "https://fill-data.papermc.io/v1/objects/15e2a9dcca5f11f4aa02cf36a9d01ea2972ddaa5d479edeabc08bc83a32a48e3/folia-1.21.11-2.jar",
+        "java_minimum": 21,
+        "java_recommended_flags": [
+          "-XX:+AlwaysPreTouch",
+          "-XX:+DisableExplicitGC",
+          "-XX:+ParallelRefProcEnabled",
+          "-XX:+PerfDisableSharedMem",
+          "-XX:+UnlockExperimentalVMOptions",
+          "-XX:+UseG1GC",
+          "-XX:G1HeapRegionSize=8M",
+          "-XX:G1HeapWastePercent=5",
+          "-XX:G1MaxNewSizePercent=40",
+          "-XX:G1MixedGCCountTarget=4",
+          "-XX:G1MixedGCLiveThresholdPercent=90",
+          "-XX:G1NewSizePercent=30",
+          "-XX:G1RSetUpdatingPauseTimePercent=5",
+          "-XX:G1ReservePercent=20",
+          "-XX:InitiatingHeapOccupancyPercent=15",
+          "-XX:MaxGCPauseMillis=200",
+          "-XX:MaxTenuringThreshold=1",
+          "-XX:SurvivorRatio=32"
+        ]
+      },
       {
         "version": "1.21.8",
         "link": "https://fill-data.papermc.io/v1/objects/233843cfd5001b6f658fcab549178d694cc37f0277d004ea295de0a94c57278f/folia-1.21.8-6.jar",
