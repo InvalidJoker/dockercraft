@@ -10,7 +10,7 @@
     "download_links": [
       {
         "version": "1.21.11",
-        "link": "https://fill-data.papermc.io/v1/objects/4a558a00005d33dafa4c4d5f9e47b3bd47d92311fceccd9c9754ee6b913f8649/paper-1.21.11-100.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/82a487ab8c2d0f6f072b8dbaedc9218c85ae3a7d167808124462b248955beec3/paper-1.21.11-111.jar",
         "java_minimum": 21,
         "java_recommended_flags": [
           "-XX:+AlwaysPreTouch",
@@ -201,7 +201,7 @@
     "download_links": [
       {
         "version": "1.21.11",
-        "link": "https://fill-data.papermc.io/v1/objects/f4e9c5c374a53d17b6173cac35242c05c12217b656b6cc5dc07354cc37ec4066/folia-1.21.11-11.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/f017c9e544e85498ed983f723667ae3b87ba645d60e6182b6ded6db494ca0424/folia-1.21.11-12.jar",
         "java_minimum": 21,
         "java_recommended_flags": [
           "-XX:+AlwaysPreTouch",
