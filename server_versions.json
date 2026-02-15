@@ -10,7 +10,7 @@
     "download_links": [
       {
         "version": "1.21.11",
-        "link": "https://fill-data.papermc.io/v1/objects/82a487ab8c2d0f6f072b8dbaedc9218c85ae3a7d167808124462b248955beec3/paper-1.21.11-111.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/4313691fd74bff9134b7a114a917be25a3961283e42f999c9ac68d81ca5e8ca0/paper-1.21.11-114.jar",
         "java_minimum": 21,
         "java_recommended_flags": [
           "-XX:+AlwaysPreTouch",
